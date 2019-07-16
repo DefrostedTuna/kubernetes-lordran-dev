@@ -1,0 +1,35 @@
+# PV - Harbor Registry
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pvc-harbor-registry
+  namespace: harbor
+  annotations:
+    pv.kubernetes.io/provisioned-by: dobs.csi.digitalocean.com
+spec:
+  storageClassName: do-block-storage
+  persistentVolumeReclaimPolicy: Retain
+  capacity:
+    storage: 25Gi
+  accessModes:
+    - ReadWriteOnce
+  csi:
+    driver: dobs.csi.digitalocean.com
+    fsType: ext4
+    volumeHandle: f9341465-93ed-11e9-907e-0a58ac1445d4
+    volumeAttributes:
+      com.digitalocean.csi/noformat: "true"
+---
+# PVC - Harbor Registry
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: pvc-harbor-registry
+  namespace: harbor
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 25Gi
+  storageClassName: do-block-storage

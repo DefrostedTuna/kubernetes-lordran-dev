@@ -1,0 +1,35 @@
+# PV - Harbor Redis
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pvc-harbor-redis
+  namespace: harbor
+  annotations:
+    pv.kubernetes.io/provisioned-by: dobs.csi.digitalocean.com
+spec:
+  storageClassName: do-block-storage
+  persistentVolumeReclaimPolicy: Retain
+  capacity:
+    storage: 2Gi
+  accessModes:
+    - ReadWriteOnce
+  csi:
+    driver: dobs.csi.digitalocean.com
+    fsType: ext4
+    volumeHandle: 556dde5b-93ee-11e9-907e-0a58ac1445d4
+    volumeAttributes:
+      com.digitalocean.csi/noformat: "true"
+---
+# PVC - Harbor Redis
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: pvc-harbor-redis
+  namespace: harbor
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 2Gi
+  storageClassName: do-block-storage

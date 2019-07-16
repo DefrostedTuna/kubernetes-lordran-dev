@@ -1,0 +1,69 @@
+apiVersion: flux.weave.works/v1beta1
+kind: HelmRelease
+metadata:
+  name: harbor
+  namespace: harbor
+  annotations:
+    flux.weave.works/automated: "false"
+spec:
+  releaseName: harbor
+  chart:
+    repository: https://helm.goharbor.io
+    name: harbor
+    version: 1.1.1
+  values:
+    imagePullPolicy: Always
+    externalURL: https://harbor.uptilt.dev
+    FullNameOverride: harbor
+    harborAdminPassword: changeme
+    secretKey: SoFpGgs9ag38S9QZ
+    expose:
+      type: ingress
+      tls:
+        enabled: true
+        secretName: "harbor-registry-tls-staging"
+        notarySecretName: "harbor-notary-tls-staging"
+      ingress:
+        hosts:
+          core: harbor.uptilt.dev
+          notary: notary.harbor.uptilt.dev
+        annotations:
+          ingress.kubernetes.io/ssl-redirect: "true"
+          nginx.ingress.kubernetes.io/ssl-redirect: "true"
+          ingress.kubernetes.io/proxy-body-size: "0"
+          nginx.ingress.kubernetes.io/proxy-body-size: "0"
+          certmanager.k8s.io/cluster-issuer: letsencrypt-staging
+    persistence:
+      enabled: true
+      resourcePolicy: "keep"
+      persistentVolumeClaim:
+        registry:
+          existingClaim: pvc-harbor-registry
+          storageClass: "-"
+          subPath: ""
+          accessMode: ReadWriteOnce
+          size: 25Gi
+        chartmuseum:
+          existingClaim: pvc-harbor-chartmuseum
+          storageClass: "-"
+          subPath: ""
+          accessMode: ReadWriteOnce
+          size: 10Gi
+        jobservice:
+          existingClaim: pvc-harbor-jobservice
+          storageClass: "-"
+          subPath: ""
+          accessMode: ReadWriteOnce
+          size: 2Gi
+        database:
+          existingClaim: pvc-harbor-database
+          storageClass: "-"
+          subPath: ""
+          accessMode: ReadWriteOnce
+          size: 2Gi
+        redis:
+          existingClaim: pvc-harbor-redis
+          storageClass: "-"
+          subPath: ""
+          accessMode: ReadWriteOnce
+          size: 2Gi
