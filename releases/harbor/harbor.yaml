@@ -13,11 +13,16 @@ spec:
     name: harbor
     version: 1.0.0
   values:
+    valuesFrom:
+    - secretKeyRef:
+        name: harbor-helm-chart-config
+        # key: values.yaml
+        # optional: false
     imagePullPolicy: Always
     externalURL: https://harbor.uptilt.dev
     FullNameOverride: harbor
-    harborAdminPassword: changeme
-    secretKey: SoFpGgs9ag38S9QZ
+    # harborAdminPassword: changeme
+    # secretKey: SoFpGgs9ag38S9QZ
     expose:
       type: ingress
       tls:
