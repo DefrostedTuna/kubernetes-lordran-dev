@@ -4,7 +4,6 @@ metadata:
   name: harbor
   namespace: harbor
   annotations:
-    # flux.weave.works/ignore: true
     flux.weave.works/automated: "false"
 spec:
   releaseName: harbor
@@ -16,13 +15,9 @@ spec:
     valuesFrom:
     - secretKeyRef:
         name: harbor-helm-chart-config
-        # key: values.yaml
-        # optional: false
     imagePullPolicy: Always
     externalURL: https://harbor.uptilt.dev
     FullNameOverride: harbor
-    # harborAdminPassword: changeme
-    # secretKey: SoFpGgs9ag38S9QZ
     expose:
       type: ingress
       tls:
@@ -55,21 +50,9 @@ spec:
           subPath: ""
           accessMode: ReadWriteOnce
           size: 10Gi
-        # jobservice:
-        #   existingClaim: pvc-harbor-jobservice
-        #   storageClass: "-"
-        #   subPath: ""
-        #   accessMode: ReadWriteOnce
-        #   size: 2Gi
         database:
           existingClaim: pvc-harbor-database
           storageClass: "-"
           subPath: ""
           accessMode: ReadWriteOnce
           size: 2Gi
-        # redis:
-          # existingClaim: pvc-harbor-redis
-          # storageClass: "-"
-          # subPath: ""
-          # accessMode: ReadWriteOnce
-          # size: 2Gi
