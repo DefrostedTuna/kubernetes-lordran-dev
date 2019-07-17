@@ -5,7 +5,7 @@ metadata:
   name: pvc-harbor-registry
   namespace: harbor
   annotations:
-    flux.weave.works/ignore: true
+    # flux.weave.works/ignore: true
     pv.kubernetes.io/provisioned-by: dobs.csi.digitalocean.com
 spec:
   storageClassName: do-block-storage
@@ -17,7 +17,7 @@ spec:
   csi:
     driver: dobs.csi.digitalocean.com
     fsType: ext4
-    volumeHandle: f9341465-93ed-11e9-907e-0a58ac1445d4
+    volumeHandle: a7e0b161-a847-11e9-bba1-0a58ac1444db
     volumeAttributes:
       com.digitalocean.csi/noformat: "true"
 ---
@@ -28,7 +28,7 @@ metadata:
   name: pvc-harbor-registry
   namespace: harbor
   annotations:
-    flux.weave.works/ignore: true
+    # flux.weave.works/ignore: true
 spec:
   accessModes:
   - ReadWriteOnce
