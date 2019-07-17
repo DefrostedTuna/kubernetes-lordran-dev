@@ -4,7 +4,7 @@ metadata:
   name: harbor
   namespace: harbor
   annotations:
-    flux.weave.works/ignore: true
+    # flux.weave.works/ignore: true
     flux.weave.works/automated: "false"
 spec:
   releaseName: harbor
@@ -50,21 +50,21 @@ spec:
           subPath: ""
           accessMode: ReadWriteOnce
           size: 10Gi
-        jobservice:
-          existingClaim: pvc-harbor-jobservice
-          storageClass: "-"
-          subPath: ""
-          accessMode: ReadWriteOnce
-          size: 2Gi
+        # jobservice:
+        #   existingClaim: pvc-harbor-jobservice
+        #   storageClass: "-"
+        #   subPath: ""
+        #   accessMode: ReadWriteOnce
+        #   size: 2Gi
         database:
           existingClaim: pvc-harbor-database
           storageClass: "-"
           subPath: ""
           accessMode: ReadWriteOnce
           size: 2Gi
-        redis:
-          existingClaim: pvc-harbor-redis
-          storageClass: "-"
-          subPath: ""
-          accessMode: ReadWriteOnce
-          size: 2Gi
+        # redis:
+          # existingClaim: pvc-harbor-redis
+          # storageClass: "-"
+          # subPath: ""
+          # accessMode: ReadWriteOnce
+          # size: 2Gi
