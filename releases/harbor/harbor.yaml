@@ -10,7 +10,7 @@ spec:
   chart:
     repository: https://helm.goharbor.io
     name: harbor
-    version: 1.1.1
+    version: 1.0.0
   values:
     imagePullPolicy: Always
     externalURL: https://harbor.uptilt.dev
