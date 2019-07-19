@@ -19,6 +19,14 @@ spec:
       pullPolicy: Always
       auth: true
       pullSecretsName: harbor-regcred
+    deployment:
+      membersUrl:
+        valueFrom:
+          configMapKeyRef:
+            name: portfolio-2019
+            key: membersUrl
+      questsUrl:
+      resumeUrl:
     ingress:
       enabled: true
       annotations:
