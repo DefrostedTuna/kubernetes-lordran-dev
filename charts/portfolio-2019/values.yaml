@@ -4,7 +4,7 @@ nameOverride: "portfolio-2019"
 fullnameOverride: "portfolio-2019"
 
 image:
-  repository: uptilt/portfolio-2019
+  repository: harbor.uptilt.dev/uptilt/portfolio-2019
   tag: 1.0.0
   pullPolicy: Always
   auth: true
@@ -14,21 +14,21 @@ deployment:
   annotations:
     configHash: ""
   env:
-    membersUrl:
-      valueFrom:
-        configMapKeyRef:
-          name: portfolio-2019
-          key: membersUrl
-    questsUrl:
-      valueFrom:
-        configMapKeyRef:
-          name: portfolio-2019
-          key: questsUrl
-    resumeUrl:
-      valueFrom:
-        configMapKeyRef:
-          name: portfolio-2019
-          key: resumeUrl
+    membersUrl: ""
+      # valueFrom:
+      #   configMapKeyRef:
+      #     name: portfolio-2019
+      #     key: membersUrl
+    questsUrl: ""
+      # valueFrom:
+      #   configMapKeyRef:
+      #     name: portfolio-2019
+      #     key: questsUrl
+    resumeUrl: ""
+      # valueFrom:
+      #   configMapKeyRef:
+      #     name: portfolio-2019
+      #     key: resumeUrl
 
 service:
   type: ClusterIP

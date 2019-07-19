@@ -23,22 +23,22 @@ spec:
     deployment:
       annotations:
         configHash: 4f348008036e3eb26d33a4f6f78f5523ac62708e904f034f44253798493e6d3e
-      env:
-        membersUrl:
-          valueFrom:
-            configMapKeyRef:
-              name: portfolio-2019
-              key: membersUrl
-        questsUrl:
-          valueFrom:
-            configMapKeyRef:
-              name: portfolio-2019
-              key: questsUrl
-        resumeUrl:
-          valueFrom:
-            configMapKeyRef:
-              name: portfolio-2019
-              key: resumeUrl
+      # env:
+      #   membersUrl:
+      #     valueFrom:
+      #       configMapKeyRef:
+      #         name: portfolio-2019
+      #         key: membersUrl
+      #   questsUrl:
+      #     valueFrom:
+      #       configMapKeyRef:
+      #         name: portfolio-2019
+      #         key: questsUrl
+      #   resumeUrl:
+      #     valueFrom:
+      #       configMapKeyRef:
+      #         name: portfolio-2019
+      #         key: resumeUrl
     ingress:
       enabled: true
       annotations:
