@@ -22,6 +22,7 @@ spec:
       pullPolicy: Always
       auth: true
       pullSecretsName: harbor-regcred
+    configHash: cdcb422ce068fdb1dccb1313e4802e72e9d3c4a79a18439a00c70716054cf065
     ingress:
       enabled: true
       annotations:
@@ -32,7 +33,6 @@ spec:
         certmanager.k8s.io/cluster-issuer: letsencrypt-staging
       paths:
       - "/"
-      - "/*"
       hosts:
       - uptilt.dev
       tls:
