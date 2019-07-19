@@ -20,8 +20,7 @@ spec:
       auth: true
       pullSecretsName: harbor-regcred
     deployment:
-      membersUrl:
-        valueFrom:
+      membersUrlFrom:
         - configMapKeyRef:
           name: portfolio-2019
           key: membersUrl
