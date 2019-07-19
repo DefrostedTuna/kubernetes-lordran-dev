@@ -12,9 +12,6 @@ spec:
     git: git@github.com:defrostedtuna/kubernetes-lordran-dev
     path: charts/portfolio-2019
     ref: master
-  valuesFrom:
-  - configMapKeyRef:
-    name: portfolio-2019
   values:
     image:
       repository: harbor.uptilt.dev/uptilt/portfolio-2019
@@ -22,6 +19,10 @@ spec:
       pullPolicy: Always
       auth: true
       pullSecretsName: harbor-regcred
+    deployment:
+      valuesFrom:
+      - configMapKeyRef:
+          name: portfolio-2019
     ingress:
       enabled: true
       annotations:
