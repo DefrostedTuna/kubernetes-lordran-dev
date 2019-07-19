@@ -22,9 +22,9 @@ spec:
     deployment:
       membersUrl:
         valueFrom:
-          configMapKeyRef:
-            name: portfolio-2019
-            key: membersUrl
+        - configMapKeyRef:
+          name: portfolio-2019
+          key: membersUrl
       questsUrl:
       resumeUrl:
     ingress:
