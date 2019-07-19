@@ -1,13 +1,13 @@
 apiVersion: flux.weave.works/v1beta1
 kind: HelmRelease
 metadata:
-  name: portfolio-2019
+  name: portfolio
   namespace: portfolio
   annotations:
     # flux.weave.works/automated: "true"
     # flux.weave.works/tag.chart-image: semver:~1.*
 spec:
-  releaseName: portfolio-2019
+  releaseName: portfolio
   chart:
     git: git@github.com:defrostedtuna/kubernetes-lordran-dev
     path: charts/portfolio-2019
