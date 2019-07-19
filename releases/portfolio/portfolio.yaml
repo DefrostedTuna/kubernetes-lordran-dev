@@ -13,16 +13,15 @@ spec:
     path: charts/portfolio-2019
     ref: master
   values:
+    valuesFrom:
+    - configMapKeyRef:
+      name: portfolio-2019
     image:
       repository: harbor.uptilt.dev/uptilt/portfolio-2019
       tag: 1.0.1
       pullPolicy: Always
       auth: true
       pullSecretsName: harbor-regcred
-    deployment:
-      valuesFrom:
-      - configMapKeyRef: 
-        name: portfolio-2019
     ingress:
       enabled: true
       annotations:
