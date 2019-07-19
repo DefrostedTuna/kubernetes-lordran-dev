@@ -13,6 +13,10 @@ image:
 nameOverride: "portfolio-2019"
 fullnameOverride: "portfolio-2019"
 
+deployment:
+  annotations:
+    configHash: ""
+
 service:
   type: ClusterIP
   port: 80
