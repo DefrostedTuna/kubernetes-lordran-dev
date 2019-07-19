@@ -4,7 +4,7 @@ metadata:
   name: portfolio-2019
   namespace: portfolio
 data:
-  deployment:
+  deployment: |
     membersUrl: "https://gist.githubusercontent.com/DefrostedTuna/90b6c9cc8cc30c5cb550e3025c6257bd/raw/members.json"
     questsUrl: "https://gist.githubusercontent.com/DefrostedTuna/a5b72d65380787122df65a44ec1f8c6c/raw/quests.json"
     resumeUrl: "https://drive.google.com/file/d/17ENze1u1wc_uHW7lQ46QjF5wgB54HBxM/view?usp=sharing"
