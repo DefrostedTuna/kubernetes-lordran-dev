@@ -18,7 +18,7 @@ deployment:
     configHash: ""
   membersUrl: ""
   questsUrl: ""
-  resumeUrl: ""
+  resumeUrl: "https://google.com"
 
 service:
   type: ClusterIP
