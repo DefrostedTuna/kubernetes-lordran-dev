@@ -18,15 +18,11 @@ spec:
       labels:
         app.kubernetes.io/name: {{ include "portfolio-2019.name" . }}
         app.kubernetes.io/instance: {{ .Release.Name }}
-      {{- with .Values.deployment.annotations }}
-      annotations:
-        {{- toYaml . | nindent 8 }}
-      {{- end }}
     spec:
-      {{- if .Values.image.auth }}
+    {{- if .Values.image.auth }}
       imagePullSecrets:
         - name: {{ .Values.image.pullSecretsName }}
-      {{ end }}
+    {{ end }}
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
@@ -47,11 +43,11 @@ spec:
             {{- toYaml .Values.resources | nindent 12 }}
           env:
             - name: VUE_APP_MEMBERS_URL
-              value: {{ .Values.deployment.membersUrl }}
+              value: "https://gist.githubusercontent.com/DefrostedTuna/90b6c9cc8cc30c5cb550e3025c6257bd/raw/members.json"
             - name: VUE_APP_QUESTS_URL
-              value: {{ .Values.deployment.questsUrl }}
+              value: "https://gist.githubusercontent.com/DefrostedTuna/a5b72d65380787122df65a44ec1f8c6c/raw/quests.json"
             - name: VUE_APP_RESUME_URL
-              value: {{ .Values.deployment.resumeUrl }}
+              value: "https://drive.google.com/file/d/17ENze1u1wc_uHW7lQ46QjF5wgB54HBxM/view?usp=sharing"
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}

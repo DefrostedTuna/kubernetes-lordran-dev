@@ -1,57 +1,38 @@
 apiVersion: flux.weave.works/v1beta1
 kind: HelmRelease
 metadata:
-  name: portfolio-2019
+  name: portfolio
   namespace: portfolio
   annotations:
     # flux.weave.works/automated: "true"
-    # flux.weave.works/tag.chart-image: semver:~1.*
+    # flux.weave.works/tag.chart-image: glob:master-*
 spec:
-  releaseName: portfolio-2019
+  releaseName: portfolio
   chart:
     git: git@github.com:defrostedtuna/kubernetes-lordran-dev
-    path: charts/portfolio
+    path: charts/portfolio-2019
     ref: master
   values:
     image:
       repository: defrostedtuna/portfolio-2019
       tag: 1.0.0
-      # pullPolicy: Always
-      # auth: true
-      # pullSecretsName: harbor-regcred
-    # deployment:
-      # annotations:
-        # configHash: 4f348008036e3eb26d33a4f6f78f5523ac62708e904f034f44253798493e6d3e
-      # env:
-      #   membersUrl:
-      #     valueFrom:
-      #       configMapKeyRef:
-      #         name: portfolio-2019
-      #         key: membersUrl
-      #   questsUrl:
-      #     valueFrom:
-      #       configMapKeyRef:
-      #         name: portfolio-2019
-      #         key: questsUrl
-      #   resumeUrl:
-      #     valueFrom:
-      #       configMapKeyRef:
-      #         name: portfolio-2019
-      #         key: resumeUrl
-    # ingress:
-    #   enabled: true
-    #   annotations:
-    #     ingress.kubernetes.io/ssl-redirect: "true"
-    #     nginx.ingress.kubernetes.io/ssl-redirect: "true"
-    #     ingress.kubernetes.io/proxy-body-size: "0"
-    #     nginx.ingress.kubernetes.io/proxy-body-size: "0"
-    #     certmanager.k8s.io/cluster-issuer: letsencrypt-staging
-    #   paths:
-    #     - "/"
-    #   hosts:
-    #     - uptilt.dev
-    #   tls:
-    #     - secretName: portfolio-2019-tls-staging
-    #       hosts:
-    #         - uptilt.dev
-    
+      pullPolicy: Always
+      auth: true
+      pullSecretsName: harbor-regcred
+    ingress:
+      enabled: true
+      annotations:
+        ingress.kubernetes.io/ssl-redirect: "true"
+        nginx.ingress.kubernetes.io/ssl-redirect: "true"
+        ingress.kubernetes.io/proxy-body-size: "0"
+        nginx.ingress.kubernetes.io/proxy-body-size: "0"
+        certmanager.k8s.io/cluster-issuer: letsencrypt-staging
+      paths:
+      - "/"
+      hosts:
+      - uptilt.dev
+      tls:
+      - secretName: portfolio-2019-tls-staging
+        hosts:
+        - uptilt.dev
+
