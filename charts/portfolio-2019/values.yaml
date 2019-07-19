@@ -16,6 +16,9 @@ fullnameOverride: "portfolio-2019"
 deployment:
   annotations:
     configHash: ""
+  membersUrl: ""
+  questsUrl: ""
+  resumeUrl: ""
 
 service:
   type: ClusterIP

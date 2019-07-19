@@ -47,11 +47,11 @@ spec:
             {{- toYaml .Values.resources | nindent 12 }}
           env:
             - name: VUE_APP_MEMBERS_URL
-              value: "https://gist.githubusercontent.com/DefrostedTuna/90b6c9cc8cc30c5cb550e3025c6257bd/raw/members.json"
+              value: {{ .Values.deployment.membersUrl }}
             - name: VUE_APP_QUESTS_URL
-              value: "https://gist.githubusercontent.com/DefrostedTuna/a5b72d65380787122df65a44ec1f8c6c/raw/quests.json"
+              value: {{ .Values.deployment.questsUrl }}
             - name: VUE_APP_RESUME_URL
-              value: "https://drive.google.com/file/d/17ENze1u1wc_uHW7lQ46QjF5wgB54HBxM/view?usp=sharing"
+              value: {{ .Values.deployment.resumeUrl }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
