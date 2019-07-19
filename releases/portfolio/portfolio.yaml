@@ -10,7 +10,7 @@ spec:
   releaseName: portfolio
   chart:
     git: git@github.com:defrostedtuna/kubernetes-lordran-dev
-    path: charts/portfolio-2019
+    path: charts/portfolio
     ref: master
   values:
     image:
