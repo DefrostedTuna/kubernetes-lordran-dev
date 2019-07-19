@@ -12,10 +12,10 @@ spec:
     git: git@github.com:defrostedtuna/kubernetes-lordran-dev
     path: charts/portfolio-2019
     ref: master
-  valuesFrom:
-  - configMapKeyRef:
-    name: portfolio-2019
   values:
+    valuesFrom:
+    - configMapKeyRef:
+      name: portfolio-2019
     image:
       repository: harbor.uptilt.dev/uptilt/portfolio-2019
       tag: 1.0.1
