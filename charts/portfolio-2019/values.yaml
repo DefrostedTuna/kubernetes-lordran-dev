@@ -1,7 +1,7 @@
 replicaCount: 1
 
-nameOverride: "portfolio-2019"
-fullnameOverride: "portfolio-2019"
+nameOverride: "portfolio"
+fullnameOverride: "portfolio"
 
 image:
   # repository: harbor.uptilt.dev/uptilt/portfolio-2019
@@ -49,6 +49,6 @@ ingress:
   hosts:
     - uptilt.dev
   tls: []
-    - secretName: portfolio-2019-tls-staging
+    - secretName: portfolio-tls-staging
       hosts:
         - uptilt.dev
