@@ -15,7 +15,7 @@ spec:
   valuesFrom:
   - configMapKeyRef:
       name: portfolio-2019
-      key: membersUrl
+      key: values
   values:
     image:
       repository: harbor.uptilt.dev/uptilt/portfolio-2019
