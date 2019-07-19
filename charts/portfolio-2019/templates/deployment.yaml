@@ -47,11 +47,11 @@ spec:
             {{- toYaml .Values.resources | nindent 12 }}
           env:
             - name: VUE_APP_MEMBERS_URL
-              value: {{ .Values.deployment.membersUrl }}
+              value: {{ .Values.membersUrl }}
             - name: VUE_APP_QUESTS_URL
-              value: {{ .Values.deployment.questsUrl }}
+              value: {{ .Values.questsUrl }}
             - name: VUE_APP_RESUME_URL
-              value: {{ .Values.deployment.resumeUrl }}
+              value: {{ .Values.resumeUrl }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}

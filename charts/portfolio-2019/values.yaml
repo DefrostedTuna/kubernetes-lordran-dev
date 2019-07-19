@@ -16,9 +16,9 @@ fullnameOverride: "portfolio-2019"
 deployment:
   annotations:
     configHash: ""
-  membersUrl: ""
-  questsUrl: ""
-  resumeUrl: "https://google.com"
+membersUrl: ""
+questsUrl: ""
+resumeUrl: "https://github.com"
 
 service:
   type: ClusterIP
