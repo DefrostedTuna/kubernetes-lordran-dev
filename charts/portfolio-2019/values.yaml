@@ -14,10 +14,9 @@ nameOverride: "portfolio-2019"
 fullnameOverride: "portfolio-2019"
 
 configHash: ""
-deployment:
-  membersUrl: ""
-  questsUrl: ""
-  resumeUrl: ""
+membersUrl: ""
+questsUrl: ""
+resumeUrl: ""
 
 service:
   type: ClusterIP
