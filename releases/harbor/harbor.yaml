@@ -11,10 +11,10 @@ spec:
     repository: https://helm.goharbor.io
     name: harbor
     version: 1.0.0
+  valuesFrom:
+  - secretKeyRef:
+      name: harbor-helm-chart-values
   values:
-    valuesFrom:
-    - secretKeyRef:
-        name: harbor-helm-chart-config
     imagePullPolicy: Always
     externalURL: https://harbor.uptilt.dev
     FullNameOverride: harbor
