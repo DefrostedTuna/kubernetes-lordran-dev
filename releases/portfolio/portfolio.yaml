@@ -4,8 +4,8 @@ metadata:
   name: portfolio-2019
   namespace: portfolio
   annotations:
-    # flux.weave.works/automated: "true"
-    # flux.weave.works/tag.chart-image: glob:master-*
+    flux.weave.works/automated: "true"
+    flux.weave.works/tag.chart-image: semver:~1.*
 spec:
   releaseName: portfolio-2019
   chart:
