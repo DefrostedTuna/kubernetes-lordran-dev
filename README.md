@@ -45,6 +45,12 @@ A **DNS 'A' record** must be mapped to the Load Balancer prior to the cluster in
 
 If a Kubernetes cluster has not been created, the setup script located at `setup/init-cluster.sh` can take care of the creation for you. It will also guide you through setting up the other components required for Flux's initial scan of the repository.
 
+**Note**: Make sure the scripts are executable!
+
+```
+chmod -R +x setup/
+```
+
 ## Recovering A Cluster
 
 If a Kubernetes cluster has been previously created and needs to be recovered as a new cluster, most of the steps will be the same. The main difference is that the private key used by Sealed Secrets will need to be restored. If the private key is not restored, previously encrypted secrets will not be able to be decrypted on the cluster and will need to be re-encrypted with the new private key.
