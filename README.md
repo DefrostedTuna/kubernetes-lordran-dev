@@ -2,17 +2,17 @@
 
 ### Table of Contents
 
-- [About This Repository](#about-this-repository)
-- [Initial Configuration](#initial-configuration)
-- [Spinning A Cluster From Scratch](#spinning-a-cluster-from-scratch)
-- [Recovering A Cluster](#recovering-a-cluster)
-- [Kubeseal](#kubeseal)
-      - [Installing Kubeseal](#installing-kubeseal)
-      - [Using Kubeseal To Encrypt Secrets](#using-kubeseal-to-encrypt-secrets)
-      - [DigitalOcean Kubeconfig File](#digitalocean-kubeconfig-file)
-- [Adding Applications](#adding-applications)
-- [Config Map Hash](#config-map-hashs)
-- [TODO](#todo)
+* [About This Repository](#about-this-repository)
+* [Initial Configuration](#initial-configuration)
+* [Spinning A Cluster From Scratch](#spinning-a-cluster-from-scratch)
+* [Recovering A Cluster](#recovering-a-cluster)
+* [Kubeseal](#kubeseal)
+  * [Installing Kubeseal](#installing-kubeseal)
+  * [Using Kubeseal To Encrypt Secrets](#using-kubeseal-to-encrypt-secrets)
+  * [DigitalOcean Kubeconfig File](#digitalocean-kubeconfig-file)
+* [Adding Applications](#adding-applications)
+* [Config Map Hash](#config-map-hashs)
+* [TODO](#todo)
 
 ## About This Repository
 
