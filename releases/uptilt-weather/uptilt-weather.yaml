@@ -1,0 +1,40 @@
+apiVersion: flux.weave.works/v1beta1
+kind: HelmRelease
+metadata:
+  name: uptilt-weather
+  namespace: uptilt-weather
+  annotations:
+    flux.weave.works/automated: "false"
+spec:
+  releaseName: uptilt-weather
+  chart:
+    git: git@github.com:defrostedtuna/kubernetes-lordran-dev
+    path: charts/uptilt-weather
+    ref: master
+  valuesFrom:
+  - secretKeyRef:
+      name: uptilt-weather-helm-chart-values
+  values:
+    image:
+      repository: harbor.uptilt.io/defrostedtuna/uptilt-weather
+      tag: master-28fabe6
+      pullPolicy: Always
+      auth: true
+      pullSecretsName: harbor-regcred
+    secretHash: e5c5119ad77c75bc3d8ee4c85b0500bf12fb6c76e507af090b49e7ade53776fc
+    ingress:
+      enabled: true
+      annotations:
+        ingress.kubernetes.io/ssl-redirect: "true"
+        nginx.ingress.kubernetes.io/ssl-redirect: "true"
+        ingress.kubernetes.io/proxy-body-size: "0"
+        nginx.ingress.kubernetes.io/proxy-body-size: "0"
+        certmanager.k8s.io/cluster-issuer: letsencrypt-staging
+      paths:
+      - "/"
+      hosts:
+        - weather.uptilt.dev
+      tls:
+      - secretName: uptilt-weather-tls-staging
+        hosts:
+          - weather.uptilt.dev
