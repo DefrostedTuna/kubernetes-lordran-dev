@@ -21,7 +21,7 @@ spec:
       pullPolicy: Always
       auth: true
       pullSecretsName: harbor-regcred
-    secretHash: e5c5119ad77c75bc3d8ee4c85b0500bf12fb6c76e507af090b49e7ade53776fc
+    secretHash: 0ada24dc01199440aaac559a22b24abd18a618e3e945572b49fa09534678a2e6
     ingress:
       enabled: true
       annotations:
