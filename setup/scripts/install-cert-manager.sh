@@ -16,7 +16,7 @@ helm repo add jetstack https://charts.jetstack.io
 echo
 
 echo "Installing Cert Manager..."
-helm upgrade --install cert-manager --namespace cert-manager jetstack/cert-manager > /dev/null 2>&1
+helm upgrade --install cert-manager --namespace cert-manager jetstack/cert-manager --version v0.8.1 > /dev/null 2>&1
 
 if [[ $? -eq 0 ]]; then
   echo -e "\033[32mCert Manager has been installed.\033[39m"
