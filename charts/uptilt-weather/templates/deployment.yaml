@@ -50,10 +50,6 @@ spec:
               value: {{ .Values.googleApiKey }}
             - name: VUE_APP_WEATHER_API_KEY
               value: {{ .Values.weatherApiKey }}
-            - name: SECRET_HASH
-              valueFrom:
-                fieldRef:
-                  fieldPath: spec.template.metadata.annotations.secretHash
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
