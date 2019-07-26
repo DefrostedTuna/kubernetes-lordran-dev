@@ -18,7 +18,7 @@ spec:
       name: portfolio-2019
   values:
     image:
-      repository: harbor.uptilt.io/uptilt/portfolio-2019
+      repository: harbor.uptilt.io/defrostedtuna/portfolio-2019
       tag: 1.0.3
       pullPolicy: Always
       auth: true
