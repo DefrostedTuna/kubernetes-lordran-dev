@@ -4,6 +4,7 @@ metadata:
   name: harbor
   namespace: harbor
   annotations:
+    flux.weave.works/ignore: true
     flux.weave.works/automated: "false"
 spec:
   releaseName: harbor

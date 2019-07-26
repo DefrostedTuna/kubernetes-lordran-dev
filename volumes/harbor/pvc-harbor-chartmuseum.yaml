@@ -5,6 +5,7 @@ metadata:
   name: pvc-harbor-chartmuseum
   namespace: harbor
   annotations:
+    flux.weave.works/ignore: true
     pv.kubernetes.io/provisioned-by: dobs.csi.digitalocean.com
 spec:
   storageClassName: do-block-storage
@@ -26,6 +27,8 @@ kind: PersistentVolumeClaim
 metadata:
   name: pvc-harbor-chartmuseum
   namespace: harbor
+  annotations: 
+    flux.weave.works/ignore: true
 spec:
   accessModes:
   - ReadWriteOnce
