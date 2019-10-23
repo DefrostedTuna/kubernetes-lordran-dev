@@ -10,6 +10,6 @@ spec:
   chart:
     repository: https://kubernetes-charts.storage.googleapis.com/
     name: redis-ha
-    version: 5.0.5
+    version: 3.9.0
   values:
     tag: 5.0.5-alpine
