@@ -14,3 +14,5 @@ spec:
   values:
     tag: 5.0.5-alpine
     fullNameOverride: "xivstatus-redis"
+    persistentVolume:
+      enabled: false
