@@ -19,7 +19,7 @@ spec:
   values:
     image:
       repository: harbor.uptilt.io/defrostedtuna/portfolio-2019
-      tag: 1.0.3
+      tag: 1.1.0
       pullPolicy: Always
       auth: true
       pullSecretsName: harbor-regcred
