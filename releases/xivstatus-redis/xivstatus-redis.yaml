@@ -1,0 +1,13 @@
+apiVersion: flux.weave.works/v1beta1
+kind: HelmRelease
+metadata:
+  name: xivstatus-redis
+  namespace: xivstatus
+  annotations:
+    flux.weave.works/automated: "false"
+spec:
+  releaseName: xivstatus-redis
+  chart:
+    repository: https://kubernetes-charts.storage.googleapis.com/
+    name: redis-ha
+    version: 5.0.5-alpine
