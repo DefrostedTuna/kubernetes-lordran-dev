@@ -9,10 +9,14 @@ spec:
   releaseName: xivstatus-redis
   chart:
     repository: https://kubernetes-charts.storage.googleapis.com/
-    name: redis-ha
-    version: 3.9.0
+    name: redis
+    version: 9.4.1
   values:
     tag: 5.0.5-alpine
-    fullNameOverride: "xivstatus-redis"
-    persistentVolume:
-      enabled: false
+    usePassword: false
+    master:
+      persistence: 
+        enabled: false
+    slave:
+      persistence: 
+        enabled: false
