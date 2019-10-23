@@ -2,7 +2,7 @@ apiVersion: flux.weave.works/v1beta1
 kind: HelmRelease
 metadata:
   name: xivstatus-ui
-  namespace: xivstatus-ui
+  namespace: xivstatus
   annotations:
     flux.weave.works/automated: "false"
 spec:
