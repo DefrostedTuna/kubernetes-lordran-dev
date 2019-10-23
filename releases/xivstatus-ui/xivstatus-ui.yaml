@@ -1,0 +1,40 @@
+apiVersion: flux.weave.works/v1beta1
+kind: HelmRelease
+metadata:
+  name: xivstatus-ui
+  namespace: xivstatus-ui
+  annotations:
+    flux.weave.works/automated: "false"
+spec:
+  releaseName: xivstatus-ui
+  chart:
+    git: git@github.com:defrostedtuna/kubernetes-lordran-dev
+    path: charts/xivstatus-ui
+    ref: master
+  valuesFrom:
+  - configMapKeyRef:
+      name: xivstatus-ui
+  values:
+    image:
+      repository: harbor.uptilt.io/defrostedtuna/xivstatus-ui
+      tag: master-a6e09ba
+      pullPolicy: Always
+      auth: true
+      pullSecretsName: harbor-regcred
+    secretHash: 05519ef89e2e67ffca95c57e0c71b7a611a59deddbc59aa2d01d79e547bdaa40
+    ingress:
+      enabled: true
+      annotations:
+        ingress.kubernetes.io/ssl-redirect: "true"
+        nginx.ingress.kubernetes.io/ssl-redirect: "true"
+        ingress.kubernetes.io/proxy-body-size: "0"
+        nginx.ingress.kubernetes.io/proxy-body-size: "0"
+        certmanager.k8s.io/cluster-issuer: letsencrypt-staging
+      paths:
+      - "/"
+      hosts:
+        - xivstatus.uptilt.dev
+      tls:
+      - secretName: xivstatus-ui-tls-staging
+        hosts:
+          - xivstatus.uptilt.dev
