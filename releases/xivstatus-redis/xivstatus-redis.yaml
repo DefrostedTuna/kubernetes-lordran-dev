@@ -13,3 +13,4 @@ spec:
     version: 3.9.0
   values:
     tag: 5.0.5-alpine
+    fullNameOverride: "xivstatus-redis"
