@@ -5,6 +5,6 @@ metadata:
   namespace: xivstatus
 data:
   values.yaml: |
-    redisHost: xivstatus-redis-master
-    redisPort: 6379
-    apiHost: xivstatus-api
+    redisHost: "xivstatus-redis-master"
+    redisPort: "6379"
+    apiHost: "xivstatus-api"
