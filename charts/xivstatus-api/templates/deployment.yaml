@@ -19,6 +19,10 @@ spec:
         app.kubernetes.io/name: {{ include "xivstatus-api.name" . }}
         app.kubernetes.io/instance: {{ .Release.Name }}
     spec:
+    {{- if .Values.image.auth }}
+      imagePullSecrets:
+        - name: {{ .Values.image.pullSecretsName }}
+    {{ end }}
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
@@ -37,6 +41,51 @@ spec:
               port: http
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+          env:
+            - name: APP_NAME
+              value: "xivstatus-api"
+            - name: APP_ENV
+              value: "production"
+            - name: APP_KEY
+              value: "Ik5ILhben2kvTjXynC2j2ux4xYdXHtINrYy3+oxMQFc="
+            - name: APP_DEBUG
+              value: "false"
+            - name: APP_URL
+              value: "https://xivstatus-api.uptilt.dev"
+            - name: LOG_CHANNEL
+              value: "stack"
+            - name: DB_CONNECTION
+              value: "mysql"
+            - name: DB_HOST
+              value: "159.65.221.210"
+            - name: DB_PORT
+              value: "3306"
+            - name: DB_DATABASE
+              value: "xivstatus"
+            - name: DB_USERNAME
+              value: "xivstatus"
+            - name: DB_PASSWORD
+              value: "d27WqCwjW@y8oSSCVb%IMDyWB2@!vTlB"
+            - name: BROADCAST_DRIVER
+              value: "log"
+            - name: CACHE_DRIVER
+              value: "file"
+            - name: QUEUE_CONNECTION
+              value: "sync"
+            - name: SESSION_DRIVER
+              value: "file"
+            - name: SESSION_LIFETIME
+              value: "120"
+            - name: REDIS_HOST
+              value: "xivstatus-redis-master"
+            - name: REDIS_PASSWORD
+              value: "null"
+            - name: REDIS_HOST
+              value: "xivstatus-redis-master"
+            - name: REDIS_PORT
+              value: "6379"
+            - name: REDIS_PREFIX
+              value: ""
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
