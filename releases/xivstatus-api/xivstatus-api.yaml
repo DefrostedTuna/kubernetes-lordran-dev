@@ -12,6 +12,12 @@ spec:
     path: charts/xivstatus-api
     ref: master
   values:
+    image:
+      repository: harbor.uptilt.io/defrostedtuna/xivstatus-api
+      tag: master-a73dbf0
+      pullPolicy: Always
+      auth: true
+      pullSecretsName: harbor-regcred
     ingress:
       enabled: true
       annotations:
