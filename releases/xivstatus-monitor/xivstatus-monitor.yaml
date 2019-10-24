@@ -1,0 +1,13 @@
+apiVersion: flux.weave.works/v1beta1
+kind: HelmRelease
+metadata:
+  name: xivstatus-monitor
+  namespace: xivstatus
+  annotations:
+    flux.weave.works/automated: "false"
+spec:
+  releaseName: xivstatus-monitor
+  chart:
+    git: git@github.com:defrostedtuna/kubernetes-lordran-dev
+    path: charts/xivstatus-monitor
+    ref: master
