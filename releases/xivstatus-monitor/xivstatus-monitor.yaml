@@ -21,4 +21,4 @@ spec:
       pullPolicy: Always
       auth: true
       pullSecretsName: harbor-regcred
-    configHash: 51758bda1a9cb68238c1f1cd3572f13c3f03c6dfb48e59af517ab93a280bd2c0
+    secretHash: 51758bda1a9cb68238c1f1cd3572f13c3f03c6dfb48e59af517ab93a280bd2c0
