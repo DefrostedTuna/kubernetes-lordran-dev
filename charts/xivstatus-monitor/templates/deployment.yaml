@@ -48,6 +48,8 @@ spec:
               value: "xivstatus-redis-master"
             - name: NODE_APP_REDIS_PORT
               value: "6379"
+            - name: NODE_TLS_REJECT_UNAUTHORIZED
+              value: "0"
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
