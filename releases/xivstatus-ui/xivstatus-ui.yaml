@@ -20,7 +20,7 @@ spec:
       tag: master-cea8095
       pullPolicy: Always
       auth: true
-      pullSecretsName: harbor-regcred
+      pullSecretsName: harbor-regcred-monitor
     secretHash: 05519ef89e2e67ffca95c57e0c71b7a611a59deddbc59aa2d01d79e547bdaa40
     ingress:
       enabled: true
