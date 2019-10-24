@@ -14,7 +14,7 @@ spec:
   values:
     image:
       repository: harbor.uptilt.io/defrostedtuna/xivstatus-api
-      tag: master-a73dbf0
+      tag: master-ca44156
       pullPolicy: Always
       auth: true
       pullSecretsName: harbor-regcred
