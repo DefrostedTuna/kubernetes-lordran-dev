@@ -16,7 +16,7 @@ fullnameOverride: "xivstatus-api"
 
 envAppName: "xivstatus-api"
 envAppEnv: "production"
-envAppDebug: "false"
+envAppDebug: false
 envAppUrl: ""
 envLogChannel: "stack"
 envAppKey: ""
