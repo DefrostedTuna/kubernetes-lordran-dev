@@ -43,7 +43,7 @@ spec:
             {{- toYaml .Values.resources | nindent 12 }}
           env:
             - name: APP_NAME
-              value: {{ .Values.envAppName | quote }}
+              value: {{ .Values.envAppName }}
           #   - name: APP_ENV
           #     value: {{ .Values.envAppEnv }}
           #   - name: APP_KEY
