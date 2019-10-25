@@ -43,37 +43,37 @@ spec:
             {{- toYaml .Values.resources | nindent 12 }}
           env:
             - name: APP_NAME
-              value: {{ .Values.env.appName }}
+              value: {{ .Values.envAppName }}
             - name: APP_ENV
-              value: {{ .Values.env.appEnv }}
+              value: {{ .Values.envAppEnv }}
             - name: APP_KEY
-              value: {{ .Values.env.appKey }}
+              value: {{ .Values.envAppKey }}
             - name: APP_DEBUG
-              value: {{ .Values.env.appDebug }}
+              value: {{ .Values.envAppDebug }}
             - name: APP_URL
-              value: {{ .Values.env.appUrl }}
+              value: {{ .Values.envAppUrl }}
             - name: LOG_CHANNEL
-              value: {{ .Values.env.logChannel }}
+              value: {{ .Values.envLogChannel }}
             - name: DB_CONNECTION
-              value: {{ .Values.env.dbConnection }}
+              value: {{ .Values.envDbConnection }}
             - name: DB_HOST
-              value: {{ .Values.env.dbHost }}
+              value: {{ .Values.envDbHost }}
             - name: DB_PORT
-              value: {{ .Values.env.dbPort }}
+              value: {{ .Values.envDbPort }}
             - name: DB_DATABASE
-              value: {{ .Values.env.dbDatabase }}
+              value: {{ .Values.envDbDatabase }}
             - name: DB_USERNAME
-              value: {{ .Values.env.dbUsername }}
+              value: {{ .Values.envDbUsername }}
             - name: DB_PASSWORD
-              value: {{ .Values.env.dbPassword }}
+              value: {{ .Values.envDbPassword }}
             - name: REDIS_HOST
-              value: {{ .Values.env.redisHost }}
+              value: {{ .Values.envRedisHost }}
             - name: REDIS_PASSWORD
-              value: {{ .Values.env.redisPassword }}
+              value: {{ .Values.envRedisPassword }}
             - name: REDIS_HOST
-              value: {{ .Values.env.redisHost }}
+              value: {{ .Values.envRedisHost }}
             - name: REDIS_PORT
-              value: {{ .Values.env.redisPort }}
+              value: {{ .Values.envRedisPort }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}

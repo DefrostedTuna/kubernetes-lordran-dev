@@ -5,9 +5,8 @@ metadata:
   namespace: xivstatus
 data:
   values.yaml: |
-    env: | 
-      appName: "xivstatus-api"
-      appEnv: "production"
-      appDebug: "false"
-      appUrl: "https://xivstatus-api.uptilt.dev"
-      logChannel: "stack"
+    envAppName: "xivstatus-api"
+    envAppEnv: "production"
+    envAppDebug: "false"
+    envAppUrl: "https://xivstatus-api.uptilt.dev"
+    envLogChannel: "stack"
