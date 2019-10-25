@@ -7,6 +7,6 @@ data:
   values.yaml: |
     envAppName: "xivstatus-api"
     envAppEnv: "production"
-    envAppDebug: "false"
+    envAppDebug: false
     envAppUrl: "https://xivstatus-api.uptilt.dev"
     envLogChannel: "stack"
