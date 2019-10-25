@@ -16,8 +16,10 @@ spec:
       - name: xivstatus-migrate-database
         image: harbor.uptilt.io/defrostedtuna/xivstatus-api:master-ca44156
         imagePullPolicy: Always
-        command: ["php"]
-        args: ["artisan", "migrate:rollback", "--force", "--no-interaction"]
+        # command: ["php"]
+        # args: ["artisan", "migrate:rollback", "--force", "--no-interaction"]
+        command: ["echo"]
+        args: ["$DB_HOST"]
         envFrom:
         - secretRef:
             name: env-xivstatus-api
