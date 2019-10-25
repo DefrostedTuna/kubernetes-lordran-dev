@@ -18,8 +18,8 @@ spec:
         imagePullPolicy: Always
         # command: ["php"]
         # args: ["artisan", "migrate:rollback", "--force", "--no-interaction"]
-        command: [ "/bin/sh" ]
-        args: [ "sleep", "500" ]
+        command: [ "tail" ]
+        args: [ "-f", "/dev/null" ]
         envFrom:
         - secretRef:
             name: env-xivstatus-api
