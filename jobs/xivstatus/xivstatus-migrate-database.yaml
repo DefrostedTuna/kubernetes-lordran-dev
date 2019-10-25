@@ -16,10 +16,10 @@ spec:
         imagePullPolicy: Always
         command: ["php"]
         args: ["artisan", "migrate:rollback"]
-        # envFrom:
-        # - secretRef:
-        #     name: env-xivstatus-api
-        # envFrom:
-        # - configMapRef:
-        #     name: xivstatus-api
+        envFrom:
+        - secretRef:
+            name: env-xivstatus-api
+        envFrom:
+        - configMapRef:
+            name: xivstatus-api
       restartPolicy: Never
