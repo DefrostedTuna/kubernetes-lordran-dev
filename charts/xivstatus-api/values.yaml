@@ -14,6 +14,9 @@ image:
 nameOverride: "xivstatus-api"
 fullnameOverride: "xivstatus-api"
 
+configHash: ""
+secretHash: ""
+
 envAppName: "xivstatus-api"
 envAppEnv: "production"
 envAppDebug: false

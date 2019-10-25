@@ -18,6 +18,9 @@ spec:
       labels:
         app.kubernetes.io/name: {{ include "xivstatus-api.name" . }}
         app.kubernetes.io/instance: {{ .Release.Name }}
+      annotations:
+        configHash: {{ .Values.configHash }}
+        secretHash: {{ .Values.secretHash }}
     spec:
     {{- if .Values.image.auth }}
       imagePullSecrets:

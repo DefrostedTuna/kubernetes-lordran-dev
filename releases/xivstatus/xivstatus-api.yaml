@@ -18,6 +18,8 @@ spec:
   - secretKeyRef:
       name: env-xivstatus-api
   values:
+    configHash: c8f32ec2d03db15742d1fbf8f0e9c0af3273e7d919309c53927777de4129effa
+    secretHash: 3394fbe53d5be9f34e52eafe2f71e2093264d56b2c42fa33cf2b72445371a468
     image:
       repository: harbor.uptilt.io/defrostedtuna/xivstatus-api
       tag: master-ca44156
