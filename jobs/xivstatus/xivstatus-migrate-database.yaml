@@ -22,6 +22,6 @@ spec:
         args: [ "-f", "/dev/null" ]
         envFrom:
         - secretRef:
-            name: env-xivstatus-api
+            name: env-xivstatus-api-test
         # Config map values shouldn't matter at this point.
       restartPolicy: Never
