@@ -41,9 +41,9 @@ spec:
               port: http
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
-          # env:
-          #   - name: APP_NAME
-          #     value: {{ .Values.envAppName }}
+          env:
+            - name: APP_NAME
+              value: {{ .Values.envAppName | quote }}
           #   - name: APP_ENV
           #     value: {{ .Values.envAppEnv }}
           #   - name: APP_KEY
