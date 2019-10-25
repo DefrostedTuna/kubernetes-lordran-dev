@@ -19,7 +19,8 @@ spec:
         app.kubernetes.io/name: {{ include "xivstatus-ui.name" . }}
         app.kubernetes.io/instance: {{ .Release.Name }}
       annotations:
-        secretHash: {{ .Values.configHash }}
+        configHash: {{ .Values.configHash }}
+        secretHash: {{ .Values.secretHash }}
     spec:
     {{- if .Values.image.auth }}
       imagePullSecrets:
@@ -45,9 +46,9 @@ spec:
             {{- toYaml .Values.resources | nindent 12 }}
           env:
             - name: VUE_APP_ENVIRONMENT
-              value: "production"
+              value: {{ .Values.envAppEnvironment }}
             - name: VUE_APP_API_URL
-              value: {{ .Values.apiUrl }}
+              value: {{ .Values.envApiUrl }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}

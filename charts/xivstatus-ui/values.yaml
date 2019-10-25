@@ -6,7 +6,7 @@ replicaCount: 1
 
 image:
   repository: harbor.uptilt.io/defrostedtuna/xivstatus-ui
-  tag: latest
+  tag: stable
   pullPolicy: IfNotPresent
   auth: true
   pullSecretsName: regcred
@@ -15,28 +15,27 @@ nameOverride: "xivstatus-ui"
 fullnameOverride: "xivstatus-ui"
 
 configHash: ""
-apiUrl: ""
+secretHash: ""
+
+envAppEnvironment: "production"
+envApiUrl: ""
 
 service:
   type: ClusterIP
   port: 80
 
 ingress:
-  enabled: true
-  annotations:
-    ingress.kubernetes.io/ssl-redirect: "true"
-    nginx.ingress.kubernetes.io/ssl-redirect: "true"
-    ingress.kubernetes.io/proxy-body-size: "0"
-    nginx.ingress.kubernetes.io/proxy-body-size: "0"
-    certmanager.k8s.io/cluster-issuer: letsencrypt-staging
-  paths:
-  - "/"
+  enabled: false
+  annotations: {}
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+  paths: []
   hosts:
-    - xivstatus.uptilt.dev
-  tls:
-  - secretName: xivstatus-ui-tls-staging
-    hosts:
-      - xivstatus.uptilt.dev
+    - chart-example.local
+  tls: []
+  #  - secretName: chart-example-tls
+  #    hosts:
+  #      - chart-example.local
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious

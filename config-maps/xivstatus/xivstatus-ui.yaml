@@ -5,4 +5,5 @@ metadata:
   namespace: xivstatus
 data:
   values.yaml: |
-    apiUrl: "https://xivstatus-api.uptilt.dev" 
+    envAppEnvironment: "production"
+    envApiUrl: "https://xivstatus-api.uptilt.dev"

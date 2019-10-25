@@ -15,13 +15,13 @@ spec:
   - configMapKeyRef:
       name: xivstatus-ui
   values:
+    configHash: 77e4740cd8b2f2562fb16987bd1faac4c0c49f484b30c98c4cb7e7c695d60c45
     image:
       repository: harbor.uptilt.io/defrostedtuna/xivstatus-ui
       tag: master-78135f5
       pullPolicy: Always
       auth: true
       pullSecretsName: harbor-regcred
-    configHash: b563fd544a6fb6132740dc6eb6bbaacd73ab175c942144217b4bab31c7e481e4
     ingress:
       enabled: true
       annotations:
