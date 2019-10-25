@@ -18,8 +18,8 @@ spec:
         imagePullPolicy: Always
         # command: ["php"]
         # args: ["artisan", "migrate:rollback", "--force", "--no-interaction"]
-        command: ["echo"]
-        args: ["$DB_HOST"]
+        command: ["echo $DB_HOST"]
+        # args: ["$DB_HOST"]
         envFrom:
         - secretRef:
             name: env-xivstatus-api
