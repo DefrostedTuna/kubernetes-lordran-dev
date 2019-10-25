@@ -27,7 +27,7 @@ envDbDatabase: ""
 envDbUsername: ""
 envDbPassword: ""
 envRedisHost: ""
-envRedisPassword: ""
+envRedisPassword: "null"
 envRedisPort: ""
 
 service:
