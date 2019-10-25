@@ -15,10 +15,10 @@ spec:
         image: harbor.uptilt.io/defrostedtuna/xivstatus-api:master-ca44156
         imagePullPolicy: Always
         command: ["php artisan migrate:rollback"]
-        envFrom:
-        - secretRef:
-            name: env-xivstatus-api
-        envFrom:
-        - configMapRef:
-            name: xivstatus-api
+        # envFrom:
+        # - secretRef:
+        #     name: env-xivstatus-api
+        # envFrom:
+        # - configMapRef:
+        #     name: xivstatus-api
       restartPolicy: Never
