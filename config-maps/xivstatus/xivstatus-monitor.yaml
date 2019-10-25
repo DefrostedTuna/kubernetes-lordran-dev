@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: xivstatus-monitor
+  namespace: xivstatus
+data:
+  values.yaml: |
+    envApiHost: "https://xivstatus-api.uptilt.dev"
+    envRedisHost: "xivstatus-redis-master"
+    envRedisPort: "6379"

@@ -18,6 +18,9 @@ spec:
       labels:
         app.kubernetes.io/name: {{ include "xivstatus-monitor.name" . }}
         app.kubernetes.io/instance: {{ .Release.Name }}
+      annotations:
+        configHash: {{ .Values.configHash }}
+        secretHash: {{ .Values.secretHash }}
     spec:
     {{- if .Values.image.auth }}
       imagePullSecrets:
@@ -35,13 +38,11 @@ spec:
             {{- toYaml .Values.resources | nindent 12 }}
           env:
             - name: NODE_APP_API_HOST
-              value: "https://xivstatus-api.uptilt.dev"
+              value: {{ .Values.envApiHost | quote }}
             - name: NODE_APP_REDIS_HOST
-              value: "xivstatus-redis-master"
+              value: {{ .Values.envRedisHost | quote }}
             - name: NODE_APP_REDIS_PORT
-              value: "6379"
-            - name: NODE_TLS_REJECT_UNAUTHORIZED
-              value: "0"
+              value: {{ .Values.envRedisPort | quote }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}

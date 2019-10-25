@@ -11,10 +11,14 @@ spec:
     git: git@github.com:defrostedtuna/kubernetes-lordran-dev
     path: charts/xivstatus-monitor
     ref: master
+  valuesFrom:
+  - configMapKeyRef:
+      name: xivstatus-monitor
   values:
+    configHash: c46ee6147f8fe1ad275992dcb685b3d71b1a6c8f54630137b95d76099b10daf3
     image:
       repository: harbor.uptilt.io/defrostedtuna/xivstatus-monitor
-      tag: test6
+      tag: master-5adebb2
       pullPolicy: Always
       auth: true
       pullSecretsName: harbor-regcred

@@ -5,12 +5,21 @@
 replicaCount: 1
 
 image:
-  repository: nginx
+  repository: harbor.uptilt.io/defrostedtuna/xivstatus-monitor
   tag: stable
   pullPolicy: IfNotPresent
+  auth: true
+  pullSecretsName: regcred
 
 nameOverride: ""
 fullnameOverride: ""
+
+configHash: ""
+secretHash: ""
+
+envApiHost: ""
+envRedisHost: ""
+envRedisPort: ""
 
 service:
   type: ClusterIP
