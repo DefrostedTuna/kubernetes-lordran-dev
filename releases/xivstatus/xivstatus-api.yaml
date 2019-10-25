@@ -11,9 +11,12 @@ spec:
     git: git@github.com:defrostedtuna/kubernetes-lordran-dev
     path: charts/xivstatus-api
     ref: master
-  # valuesFrom:
-  # - configMapKeyRef:
-  #     name: xivstatus-api
+  valuesFrom:
+  - configMapKeyRef:
+      name: xivstatus-api
+  valuesFrom:
+  - secretKeyRef:
+      name: env-xivstatus-api
   values:
     image:
       repository: harbor.uptilt.io/defrostedtuna/xivstatus-api

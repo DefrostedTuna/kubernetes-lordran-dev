@@ -47,7 +47,7 @@ spec:
             - name: APP_ENV
               value: {{ .Values.envAppEnv }}
             - name: APP_KEY
-              value: {{ .Values.envAppKey }}
+              value: {{ .Values.envAppKey | quote }}
             - name: APP_DEBUG
               value: {{ .Values.envAppDebug | quote }}
             # - name: APP_URL
