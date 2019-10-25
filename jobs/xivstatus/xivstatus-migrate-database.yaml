@@ -23,5 +23,6 @@ spec:
         envFrom:
         - secretRef:
             name: env-xivstatus-api
+            value: values.yaml
         # Config map values shouldn't matter at this point.
       restartPolicy: Never
