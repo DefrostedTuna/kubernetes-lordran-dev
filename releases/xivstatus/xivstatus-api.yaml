@@ -14,9 +14,6 @@ spec:
   valuesFrom:
   - configMapKeyRef:
       name: xivstatus-api
-  # valuesFrom:
-  # - secretKeyRef:
-  #     name: env-xivstatus-api
   values:
     image:
       repository: harbor.uptilt.io/defrostedtuna/xivstatus-api

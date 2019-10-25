@@ -7,10 +7,9 @@ replicaCount: 1
 image:
   repository: harbor.uptilt.io/defrostedtuna/xivstatus-api
   tag: stable
-  pullPolicy: Always
+  pullPolicy: IfNotPresent
   auth: true
   pullSecretsName: regcred
-
 
 nameOverride: "xivstatus-api"
 fullnameOverride: "xivstatus-api"
