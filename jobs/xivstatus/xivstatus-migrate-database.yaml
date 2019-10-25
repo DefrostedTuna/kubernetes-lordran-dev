@@ -23,8 +23,5 @@ spec:
         envFrom:
         - secretRef:
             name: env-xivstatus-api
-        env:
-          - name: DB_HOST
-            value: "10.10.10.10"
         # Config map values shouldn't matter at this point.
       restartPolicy: Never
