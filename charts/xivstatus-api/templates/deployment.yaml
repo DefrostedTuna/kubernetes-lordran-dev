@@ -70,8 +70,8 @@ spec:
               value: {{ .Values.envRedisHost | quote }}
             - name: REDIS_PORT
               value: {{ .Values.envRedisPort | quote }}
-            - name: REDIS_PASSWORD
-              value: {{ .Values.envRedisPassword | quote }}
+            # - name: REDIS_PASSWORD
+            #   value: {{ .Values.envRedisPassword | quote }}
             - name: REDIS_PREFIX
               value: ""
       {{- with .Values.nodeSelector }}
