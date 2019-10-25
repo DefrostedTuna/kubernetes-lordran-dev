@@ -48,8 +48,8 @@ spec:
               value: {{ .Values.envAppEnv }}
             - name: APP_KEY
               value: {{ .Values.envAppKey }}
-            # - name: APP_DEBUG
-            #   value: {{ .Values.envAppDebug }}
+            - name: APP_DEBUG
+              value: {{ .Values.envAppDebug }}
             # - name: APP_URL
             #   value: {{ .Values.envAppUrl }}
             # - name: LOG_CHANNEL
