@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: xivstatus-api
+  namespace: xivstatus
+data:
+  values.yaml: |
+    env.appName: "xivstatus-api"
+    env.appEnv: "production"
+    env.appDebug: "false"
+    env.appUrl: "https://xivstatus-api.uptilt.dev"
+    env.logChannel: "stack"

@@ -43,49 +43,37 @@ spec:
             {{- toYaml .Values.resources | nindent 12 }}
           env:
             - name: APP_NAME
-              value: "xivstatus-api"
+              value: {{ .Values.env.appName }}
             - name: APP_ENV
-              value: "production"
+              value: {{ .Values.env.appEnv }}
             - name: APP_KEY
-              value: "Ik5ILhben2kvTjXynC2j2ux4xYdXHtINrYy3+oxMQFc="
+              value: {{ .Values.env.appKey }}
             - name: APP_DEBUG
-              value: "false"
+              value: {{ .Values.env.appDebug }}
             - name: APP_URL
-              value: "https://xivstatus-api.uptilt.dev"
+              value: {{ .Values.env.appUrl }}
             - name: LOG_CHANNEL
-              value: "stack"
+              value: {{ .Values.env.logChannel }}
             - name: DB_CONNECTION
-              value: "mysql"
+              value: {{ .Values.env.dbConnection }}
             - name: DB_HOST
-              value: "159.65.221.210"
+              value: {{ .Values.env.dbHost }}
             - name: DB_PORT
-              value: "3306"
+              value: {{ .Values.env.dbPort }}
             - name: DB_DATABASE
-              value: "xivstatus"
+              value: {{ .Values.env.dbDatabase }}
             - name: DB_USERNAME
-              value: "xivstatus"
+              value: {{ .Values.env.dbUsername }}
             - name: DB_PASSWORD
-              value: "d27WqCwjW@y8oSSCVb%IMDyWB2@!vTlB"
-            - name: BROADCAST_DRIVER
-              value: "log"
-            - name: CACHE_DRIVER
-              value: "file"
-            - name: QUEUE_CONNECTION
-              value: "sync"
-            - name: SESSION_DRIVER
-              value: "file"
-            - name: SESSION_LIFETIME
-              value: "120"
+              value: {{ .Values.env.dbPassword }}
             - name: REDIS_HOST
-              value: "xivstatus-redis-master"
+              value: {{ .Values.env.redisHost }}
             - name: REDIS_PASSWORD
-              value: "null"
+              value: {{ .Values.env.redisPassword }}
             - name: REDIS_HOST
-              value: "xivstatus-redis-master"
+              value: {{ .Values.env.redisHost }}
             - name: REDIS_PORT
-              value: "6379"
-            - name: REDIS_PREFIX
-              value: ""
+              value: {{ .Values.env.redisPort }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}

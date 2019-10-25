@@ -5,12 +5,31 @@
 replicaCount: 1
 
 image:
-  repository: nginx
+  repository: harbor.uptilt.io/defrostedtuna/xivstatus-api
   tag: stable
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
+  auth: true
+  pullSecretsName: regcred
 
-nameOverride: ""
-fullnameOverride: ""
+
+nameOverride: "xivstatus-api"
+fullnameOverride: "xivstatus-api"
+
+env.appName: "xivstatus-api"
+env.appEnv: "production"
+env.appDebug: "false"
+env.appUrl: ""
+env.logChannel: "stack"
+env.appKey: ""
+env.dbConnection: "mysql"
+env.dbHost: ""
+env.dbPort: "3306"
+env.dbDatabase: ""
+env.dbUsername: ""
+env.dbPassword: ""
+env.redisHost: ""
+env.redisPassword: ""
+env.redisPort: ""
 
 service:
   type: ClusterIP
