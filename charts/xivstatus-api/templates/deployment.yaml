@@ -41,39 +41,39 @@ spec:
               port: http
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
-          env:
-            - name: APP_NAME
-              value: {{ .Values.envAppName }}
-            - name: APP_ENV
-              value: {{ .Values.envAppEnv }}
-            - name: APP_KEY
-              value: {{ .Values.envAppKey }}
-            - name: APP_DEBUG
-              value: {{ .Values.envAppDebug }}
-            - name: APP_URL
-              value: {{ .Values.envAppUrl }}
-            - name: LOG_CHANNEL
-              value: {{ .Values.envLogChannel }}
-            - name: DB_CONNECTION
-              value: {{ .Values.envDbConnection }}
-            - name: DB_HOST
-              value: {{ .Values.envDbHost }}
-            - name: DB_PORT
-              value: {{ .Values.envDbPort }}
-            - name: DB_DATABASE
-              value: {{ .Values.envDbDatabase }}
-            - name: DB_USERNAME
-              value: {{ .Values.envDbUsername }}
-            - name: DB_PASSWORD
-              value: {{ .Values.envDbPassword }}
-            - name: REDIS_HOST
-              value: {{ .Values.envRedisHost }}
-            - name: REDIS_PASSWORD
-              value: {{ .Values.envRedisPassword }}
-            - name: REDIS_HOST
-              value: {{ .Values.envRedisHost }}
-            - name: REDIS_PORT
-              value: {{ .Values.envRedisPort }}
+          # env:
+          #   - name: APP_NAME
+          #     value: {{ .Values.envAppName }}
+          #   - name: APP_ENV
+          #     value: {{ .Values.envAppEnv }}
+          #   - name: APP_KEY
+          #     value: {{ .Values.envAppKey }}
+          #   - name: APP_DEBUG
+          #     value: {{ .Values.envAppDebug }}
+          #   - name: APP_URL
+          #     value: {{ .Values.envAppUrl }}
+          #   - name: LOG_CHANNEL
+          #     value: {{ .Values.envLogChannel }}
+          #   - name: DB_CONNECTION
+          #     value: {{ .Values.envDbConnection }}
+          #   - name: DB_HOST
+          #     value: {{ .Values.envDbHost }}
+          #   - name: DB_PORT
+          #     value: {{ .Values.envDbPort }}
+          #   - name: DB_DATABASE
+          #     value: {{ .Values.envDbDatabase }}
+          #   - name: DB_USERNAME
+          #     value: {{ .Values.envDbUsername }}
+          #   - name: DB_PASSWORD
+          #     value: {{ .Values.envDbPassword }}
+          #   - name: REDIS_HOST
+          #     value: {{ .Values.envRedisHost }}
+          #   - name: REDIS_PASSWORD
+          #     value: {{ .Values.envRedisPassword }}
+          #   - name: REDIS_HOST
+          #     value: {{ .Values.envRedisHost }}
+          #   - name: REDIS_PORT
+          #     value: {{ .Values.envRedisPort }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
