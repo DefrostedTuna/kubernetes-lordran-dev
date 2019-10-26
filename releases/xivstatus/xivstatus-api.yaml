@@ -12,14 +12,10 @@ spec:
     path: charts/xivstatus-api
     ref: master
   valuesFrom:
-  - configMapKeyRef:
-      name: xivstatus-api
-  valuesFrom:
   - secretKeyRef:
-      name: env-xivstatus-api
+      name: xivstatus-api-chart-values
   values:
-    configHash: c8f32ec2d03db15742d1fbf8f0e9c0af3273e7d919309c53927777de4129effa
-    secretHash: 4688a618b56b7c6fbf82cd371329de47811f106d6f0c955aee030adc6063e620
+    secretHash: d1b45a28fdc31c61a658e4b18815d300dbdfb7fc68bbf2f660cc2e4fedc74a8f
     image:
       repository: harbor.uptilt.io/defrostedtuna/xivstatus-api
       tag: master-ca44156
