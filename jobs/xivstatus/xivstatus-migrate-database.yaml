@@ -1,27 +1,25 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: xivstatus-migrate-database
+  name: xivstatus-initial-migration
   namespace: xivstatus
   annotations:
     flux.weave.works/ignore: false
 spec:
   template:
     metadata:
-      name: xivstatus-migrate-database
+      name: xivstatus-initial-migration
     spec:
       imagePullSecrets:
         - name: harbor-regcred
       containers:
-      - name: xivstatus-migrate-database
+      - name: xivstatus-initial-migration
         image: harbor.uptilt.io/defrostedtuna/xivstatus-api:master-ca44156
         imagePullPolicy: Always
-        # command: ["php"]
-        # args: ["artisan", "migrate:rollback", "--force", "--no-interaction"]
-        command: [ "tail" ]
-        args: [ "-f", "/dev/null" ]
+        command: ["php"]
+        args: ["artisan", "migrate", "--force", "--no-interaction"]
         envFrom:
         - secretRef:
-            name: env-xivstatus-api-test
+            name: xivstatus-api-env
         # Config map values shouldn't matter at this point.
       restartPolicy: Never
